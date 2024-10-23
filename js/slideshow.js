@@ -8,14 +8,13 @@ slides[currentSlide].style.display = 'block';
 
 // 自動でスライドを切り替える関数
 function showNextSlide() {
-  const nextSlide = currentSlide + 1; // ここで次のスライド番号を計算
-  showSlide(nextSlide);
+  showSlide(currentSlide + 1); // 次のスライド番号をそのまま渡す
 }
 
 // スライドを手動で切り替える関数
 function showSlide(index) {
   // スライドのインデックスを計算
-  const newIndex = (index + totalSlides) % totalSlides;
+  const newIndex = (index + totalSlides) % totalSlides; // 計算はshowSlide内で行う
 
   // 現在のスライドを非表示
   slides[currentSlide].style.display = 'none';
@@ -29,14 +28,12 @@ function showSlide(index) {
 
 // 前のスライドを表示
 document.getElementById('prev').addEventListener('click', () => {
-  const prevSlide = currentSlide - 1; // ここで前のスライド番号を計算
-  showSlide(prevSlide);
+  showSlide(currentSlide - 1); // 引数をそのまま渡し、計算はshowSlideで行う
 });
 
 // 次のスライドを表示
 document.getElementById('next').addEventListener('click', () => {
-  const nextSlide = currentSlide + 1; // ここで次のスライド番号を計算
-  showSlide(nextSlide);
+  showSlide(currentSlide + 1); // 引数をそのまま渡し、計算はshowSlideで行う
 });
 
 // 一定時間ごとに自動で次のスライドを表示
