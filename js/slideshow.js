@@ -8,7 +8,8 @@ slides[currentSlide].style.display = 'block';
 
 // 自動でスライドを切り替える関数
 function showNextSlide() {
-  showSlide(currentSlide + 1); // 次のスライドを表示
+  const nextSlide = currentSlide + 1; // ここで次のスライド番号を計算
+  showSlide(nextSlide);
 }
 
 // スライドを手動で切り替える関数
@@ -28,12 +29,14 @@ function showSlide(index) {
 
 // 前のスライドを表示
 document.getElementById('prev').addEventListener('click', () => {
-  showSlide(currentSlide - 1);
+  const prevSlide = currentSlide - 1; // ここで前のスライド番号を計算
+  showSlide(prevSlide);
 });
 
 // 次のスライドを表示
 document.getElementById('next').addEventListener('click', () => {
-  showSlide(currentSlide + 1);
+  const nextSlide = currentSlide + 1; // ここで次のスライド番号を計算
+  showSlide(nextSlide);
 });
 
 // 一定時間ごとに自動で次のスライドを表示
